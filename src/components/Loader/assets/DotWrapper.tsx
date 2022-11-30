@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { size } from "./types";
 
 const blinkAnimation = keyframes`
   20% {
@@ -10,12 +11,17 @@ const blinkAnimation = keyframes`
   }
 `;
 
-export const DotWrapper = styled.div`
+export const DotWrapper = styled.div<{ size?: size }>`
   display: flex;
-  width: 24px;
-  height: 24px;
+  width: max-content;
+  justify-content: center;
   align-items: center;
-  gap: 2px;
+  gap: ${({ size }) => {
+    if (size === "lg") return "8px";
+    if (size === "md") return "6px";
+
+    return "4px";
+  }};
 
   div {
     will-change: contents;

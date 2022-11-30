@@ -1,12 +1,17 @@
 import { FC } from "react";
 import { Dot, DotWrapper } from "./assets";
+import type { size } from "./assets/types";
 
-export const Loader: FC = () => {
+type LoaderProps = {
+  size: size;
+};
+
+export const Loader: FC<LoaderProps> = ({ size }) => {
   return (
     <DotWrapper>
-      <Dot />
-      <Dot />
-      <Dot />
+      <Dot size={size} />
+      <Dot size={size} />
+      <Dot size={size} />
     </DotWrapper>
   );
 };
