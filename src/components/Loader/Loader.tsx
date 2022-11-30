@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Dot, DotWrapper } from "./parts";
+import { Dot, DotWrapper } from "./assets";
 
 export const Loader: FC = () => {
   return (

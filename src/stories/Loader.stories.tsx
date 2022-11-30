@@ -1,5 +1,4 @@
-import { Loader } from "../components";
-import { GlobalStyle } from "../components/Global";
+import { Loader, GlobalStyle } from "../components";
 
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 

@@ -25,16 +25,13 @@ export const DotWrapper = styled.div`
 
   div:nth-child(1) {
     animation-delay: 0ms;
-    transform-origin: 15% 50%;
   }
 
   div:nth-child(2) {
     animation-delay: 200ms;
-    transform-origin: 50% 50%;
   }
 
   div:nth-child(3) {
     animation-delay: 450ms;
-    transform-origin: 85% 50%;
   }
 `;
