@@ -3,7 +3,7 @@ import { Button, GlobalStyle } from "../components";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
-  title: "Loader",
+  title: "Button",
   component: Button,
 } as ComponentMeta<typeof Button>;
 

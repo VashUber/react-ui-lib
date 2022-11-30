@@ -23,10 +23,6 @@ export const DotWrapper = styled.div`
     transform: scale(0);
   }
 
-  div:nth-child(1) {
-    animation-delay: 0ms;
-  }
-
   div:nth-child(2) {
     animation-delay: 200ms;
   }
