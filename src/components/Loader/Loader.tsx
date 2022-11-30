@@ -8,7 +8,7 @@ type LoaderProps = {
 
 export const Loader: FC<LoaderProps> = ({ size }) => {
   return (
-    <DotWrapper>
+    <DotWrapper size={size}>
       <Dot size={size} />
       <Dot size={size} />
       <Dot size={size} />

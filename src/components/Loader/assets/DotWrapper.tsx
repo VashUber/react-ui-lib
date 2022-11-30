@@ -17,10 +17,10 @@ export const DotWrapper = styled.div<{ size?: size }>`
   justify-content: center;
   align-items: center;
   gap: ${({ size }) => {
-    if (size === "lg") return "8px";
-    if (size === "md") return "6px";
+    if (size === "lg") return "5px";
+    if (size === "md") return "4px";
 
-    return "4px";
+    return "3px";
   }};
 
   div {
@@ -34,6 +34,6 @@ export const DotWrapper = styled.div<{ size?: size }>`
   }
 
   div:nth-child(3) {
-    animation-delay: 450ms;
+    animation-delay: 390ms;
   }
 `;
