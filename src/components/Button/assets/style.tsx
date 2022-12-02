@@ -11,7 +11,11 @@ export const ButtonStyle = styled.button<{
   width: max-content;
   outline: none;
   cursor: pointer;
-  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  width: 60px;
   background: none;
   box-sizing: border-box;
 

@@ -1,10 +1,11 @@
 import { FC } from "react";
-import { colorSchema, size } from "../SharedTypes";
+import { size } from "../SharedTypes";
 import { Dot, DotWrapper } from "./assets";
+import { LoaderColorSchema } from "./assets/types";
 
 type LoaderProps = {
   size?: size;
-  colorSchema?: colorSchema;
+  colorSchema?: LoaderColorSchema;
 };
 
 export const Loader: FC<LoaderProps> = ({ size, colorSchema }) => {

@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { size } from "./types";
+import { size } from "../../SharedTypes";
 
 const blinkAnimation = keyframes`
   20% {

@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { size, colorSchema } from "../../SharedTypes";
+import { LoaderColorSchema } from "./types";
+import { size } from "../../SharedTypes";
 
-export const Dot = styled.div<{ size?: size; colorSchema?: colorSchema }>`
+export const Dot = styled.div<{ size?: size; colorSchema?: LoaderColorSchema }>`
   ${({ size }) => {
     if (size === "lg")
       return `
@@ -21,5 +22,12 @@ export const Dot = styled.div<{ size?: size; colorSchema?: colorSchema }>`
   }}
 
   border-radius: 50%;
-  background: var(--dark);
+
+  background: ${({ colorSchema = "default" }) => {
+    if (colorSchema === "primary") return "var(--bg-primary)";
+    if (colorSchema === "secondary") return "var(--bg-secondary)";
+    if (colorSchema === "light") return "var(--light)";
+
+    return "var(--dark)";
+  }};
 `;
