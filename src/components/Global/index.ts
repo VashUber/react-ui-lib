@@ -1,5 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
+export const breakPoints = {
+  xl: "1440px",
+  lg: "1200px",
+  md: "1024px",
+  sm: "768px",
+  xs: "476px",
+};
+
 export const GlobalStyle = createGlobalStyle`
   * {
     padding: 0;
