@@ -1,3 +1,4 @@
+import { cssVar, lighten } from "polished";
 import styled from "styled-components";
 import { colorSchema } from "../../SharedTypes";
 import { variant } from "./types";
@@ -18,6 +19,7 @@ export const ButtonStyle = styled.button<{
   width: 60px;
   background: none;
   box-sizing: border-box;
+  transition: var(--transition) background ease-in-out;
 
   ${({ colorSchema = "default", variant = "default" }) => {
     if (colorSchema === "primary") {
@@ -25,6 +27,9 @@ export const ButtonStyle = styled.button<{
         return `
           background: var(--bg-primary);
           color: var(--light);
+          &:hover {
+            background: ${lighten(0.05, cssVar("--bg-primary") as string)}
+          }
         `;
       }
 
@@ -38,6 +43,9 @@ export const ButtonStyle = styled.button<{
       if (variant === "default") {
         return `
           color: var(--bg-primary);
+          &:hover {
+            color: ${lighten(0.05, cssVar("--bg-primary") as string)}
+          }
         `;
       }
     }
@@ -47,6 +55,9 @@ export const ButtonStyle = styled.button<{
         return `
           background: var(--bg-secondary);
           color: var(--light);
+          &:hover {
+            background: ${lighten(0.05, cssVar("--bg-secondary") as string)}
+          }
         `;
       }
 
@@ -54,6 +65,9 @@ export const ButtonStyle = styled.button<{
         return `
           border: 1px solid var(--bg-secondary);
           color: var(--dark);
+          &:hover {
+            color: ${lighten(0.05, cssVar("--bg-secondary") as string)}
+          }
         `;
       }
 

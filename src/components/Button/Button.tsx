@@ -10,10 +10,10 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   loading?: boolean;
 }
 
-export const Button: FC<ButtonProps> = ({ children, ...props }) => {
+export const Button: FC<ButtonProps> = ({ children, loading, ...props }) => {
   return (
     <ButtonStyle {...props}>
-      {!props.loading ? (
+      {!loading ? (
         children
       ) : (
         <Loader
