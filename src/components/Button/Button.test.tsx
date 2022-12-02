@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import { Button } from "./Button";
 
-describe("Buttom", () => {
+describe("Button", () => {
   it("Should render children prop", () => {
     const msg = "Click on me";
 

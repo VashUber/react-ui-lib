@@ -14,8 +14,8 @@ const Template: ComponentStory<typeof Button> = (args) => (
   </div>
 );
 
-export const Default = Template.bind({});
+export const Example = Template.bind({});
 
-Default.args = {
+Example.args = {
   children: "Click",
 };

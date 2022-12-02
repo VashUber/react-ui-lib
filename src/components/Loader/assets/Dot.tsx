@@ -15,5 +15,5 @@ export const Dot = styled.div<{ size?: size }>`
     return "6px";
   }};
   border-radius: 50%;
-  background: var(--bg-primary);
+  background: var(--dark);
 `;

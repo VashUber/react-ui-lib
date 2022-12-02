@@ -1,8 +1,12 @@
 import type { FC, HTMLAttributes } from "react";
 import { ButtonStyle } from "./assets";
+import { colorSchema, variant } from "./assets/types";
 
-type ButtonProps = HTMLAttributes<HTMLButtonElement>;
+interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+  variant?: variant;
+  colorSchema?: colorSchema;
+}
 
-export const Button: FC<ButtonProps> = ({ children }) => {
-  return <ButtonStyle>{children}</ButtonStyle>;
+export const Button: FC<ButtonProps> = ({ children, ...props }) => {
+  return <ButtonStyle {...props}>{children}</ButtonStyle>;
 };

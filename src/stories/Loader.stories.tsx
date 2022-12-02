@@ -14,6 +14,6 @@ const Template: ComponentStory<typeof Loader> = (args) => (
   </div>
 );
 
-export const Default = Template.bind({});
+export const Example = Template.bind({});
 
-Default.args = {};
+Example.args = {};
