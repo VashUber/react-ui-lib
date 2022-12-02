@@ -1,6 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
   :root {
     --bg-primary: #6e7ce7;
     --bg-secondary: #f3c40b;
@@ -9,5 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     --light: #ffffff;
 
     --transition: 0.25s;
+
+    --text: 14px;
   }
 `;

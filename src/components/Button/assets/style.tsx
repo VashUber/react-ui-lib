@@ -19,7 +19,8 @@ export const ButtonStyle = styled.button<{
   width: 60px;
   background: none;
   box-sizing: border-box;
-  transition: var(--transition) background ease-in-out;
+  transition: var(--transition) background ease-in-out,
+    var(--transition) color ease-in-out;
 
   ${({ colorSchema = "default", variant = "default" }) => {
     if (colorSchema === "primary") {
@@ -28,7 +29,10 @@ export const ButtonStyle = styled.button<{
           background: var(--bg-primary);
           color: var(--light);
           &:hover {
-            background: ${lighten(0.05, cssVar("--bg-primary") as string)}
+            background: ${lighten(
+              0.05,
+              cssVar("--bg-primary", "#fff") as string
+            )}
           }
         `;
       }
@@ -44,7 +48,7 @@ export const ButtonStyle = styled.button<{
         return `
           color: var(--bg-primary);
           &:hover {
-            color: ${lighten(0.05, cssVar("--bg-primary") as string)}
+            color: ${lighten(0.05, cssVar("--bg-primary", "#fff") as string)}
           }
         `;
       }
@@ -56,7 +60,10 @@ export const ButtonStyle = styled.button<{
           background: var(--bg-secondary);
           color: var(--light);
           &:hover {
-            background: ${lighten(0.05, cssVar("--bg-secondary") as string)}
+            background: ${lighten(
+              0.05,
+              cssVar("--bg-secondary", "#fff") as string
+            )}
           }
         `;
       }
@@ -66,7 +73,7 @@ export const ButtonStyle = styled.button<{
           border: 1px solid var(--bg-secondary);
           color: var(--dark);
           &:hover {
-            color: ${lighten(0.05, cssVar("--bg-secondary") as string)}
+            color: ${lighten(0.05, cssVar("--bg-secondary", "#fff") as string)}
           }
         `;
       }
