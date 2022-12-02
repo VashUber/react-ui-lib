@@ -1,11 +1,12 @@
 import { cssVar, lighten } from "polished";
 import styled from "styled-components";
-import { colorSchema } from "../../SharedTypes";
+import { colorSchema, size } from "../../SharedTypes";
 import { variant } from "./types";
 
 export const ButtonStyle = styled.button<{
   variant?: variant;
   colorSchema?: colorSchema;
+  size?: size;
 }>`
   border: none;
   border-radius: 10px;
@@ -15,12 +16,30 @@ export const ButtonStyle = styled.button<{
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 25px;
-  width: 60px;
   background: none;
   box-sizing: border-box;
   transition: var(--transition) background ease-in-out,
     var(--transition) color ease-in-out;
+
+  ${({ size }) => {
+    if (size === "lg") {
+      return `
+        height: 35px;
+        width: 80px;
+      `;
+    }
+
+    if (size === "md") {
+      return `
+        height: 30px;
+        width: 70px;
+      `;
+    }
+
+    return `
+      height: 25px;
+      width: 60px;`;
+  }}
 
   ${({ colorSchema = "default", variant = "default" }) => {
     if (colorSchema === "primary") {
