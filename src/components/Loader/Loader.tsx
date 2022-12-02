@@ -1,17 +1,18 @@
 import { FC } from "react";
+import { colorSchema, size } from "../SharedTypes";
 import { Dot, DotWrapper } from "./assets";
-import type { size } from "./assets/types";
 
 type LoaderProps = {
-  size: size;
+  size?: size;
+  colorSchema?: colorSchema;
 };
 
-export const Loader: FC<LoaderProps> = ({ size }) => {
+export const Loader: FC<LoaderProps> = ({ size, colorSchema }) => {
   return (
     <DotWrapper size={size}>
-      <Dot size={size} />
-      <Dot size={size} />
-      <Dot size={size} />
+      <Dot size={size} colorSchema={colorSchema} />
+      <Dot size={size} colorSchema={colorSchema} />
+      <Dot size={size} colorSchema={colorSchema} />
     </DotWrapper>
   );
 };

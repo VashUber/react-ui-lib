@@ -1,6 +1,7 @@
 import type { FC, HTMLAttributes } from "react";
+import { colorSchema } from "../SharedTypes";
 import { ButtonStyle } from "./assets";
-import { colorSchema, variant } from "./assets/types";
+import { variant } from "./assets/types";
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   variant?: variant;

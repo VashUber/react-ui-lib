@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { colorSchema, variant } from "./types";
+import { colorSchema } from "../../SharedTypes";
+import { variant } from "./types";
 
 export const ButtonStyle = styled.button<{
   variant?: variant;
@@ -14,7 +15,7 @@ export const ButtonStyle = styled.button<{
   background: none;
   box-sizing: border-box;
 
-  ${({ colorSchema, variant }) => {
+  ${({ colorSchema = "default", variant = "default" }) => {
     if (colorSchema === "primary") {
       if (variant === "contained") {
         return `

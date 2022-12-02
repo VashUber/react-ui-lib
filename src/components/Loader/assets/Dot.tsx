@@ -1,19 +1,25 @@
 import styled from "styled-components";
-import { size } from "./types";
+import { size, colorSchema } from "../../SharedTypes";
 
-export const Dot = styled.div<{ size?: size }>`
-  width: ${({ size }) => {
-    if (size === "lg") return "15px";
-    if (size === "md") return "10px";
+export const Dot = styled.div<{ size?: size; colorSchema?: colorSchema }>`
+  ${({ size }) => {
+    if (size === "lg")
+      return `
+      width: 15px;
+      height: 15px;
+    `;
+    if (size === "md")
+      return `
+      width: 10px;
+      height: 10px;
+    `;
 
-    return "6px";
-  }};
-  height: ${({ size }) => {
-    if (size === "lg") return "15px";
-    if (size === "md") return "10px";
+    return `
+      width: 6px;
+      height: 6px;
+    `;
+  }}
 
-    return "6px";
-  }};
   border-radius: 50%;
   background: var(--dark);
 `;
