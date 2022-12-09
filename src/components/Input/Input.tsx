@@ -17,6 +17,7 @@ export const Input: FC<InputProps> = ({
     <InputWrapperStyle>
       <InputStyle
         colorSchema={colorSchema}
+        value={value}
         isEmpty={!value.length}
         {...props}
       />
