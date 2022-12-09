@@ -22,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
     --dark: #212121;
     --light: #ffffff;
 
-    --transition: 0.25s;
+    --transition: 0.15s;
 
     --text: 14px;
   }
