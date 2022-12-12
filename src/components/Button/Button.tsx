@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes, memo } from "react";
+import { FC, HTMLAttributes, memo, MouseEvent, useRef } from "react";
 import cn from "classnames";
 import { colorSchema, size } from "../SharedTypes";
 import classes from "./assets/styles.module.scss";
@@ -16,8 +16,32 @@ export const Button: FC<ButtonProps> = memo(
     size = "sm",
     colorSchema = "default",
     variant = "default",
+    onClick,
     ...props
   }) => {
+    const btnRef = useRef<HTMLButtonElement>(null!);
+
+    const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+      const x = e.nativeEvent.offsetX;
+      const y = e.nativeEvent.offsetY;
+      if (x === 0 && y === 0) return;
+
+      if (onClick) {
+        onClick(e);
+      }
+
+      const ripple = document.createElement("span");
+      ripple.classList.add(classes["ripple"]);
+      ripple.style.top = y + "px";
+      ripple.style.left = x + "px";
+
+      btnRef.current.appendChild(ripple);
+
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    };
+
     return (
       <button
         {...props}
@@ -27,6 +51,8 @@ export const Button: FC<ButtonProps> = memo(
           classes[`button--${variant}`],
           classes[`button--${colorSchema}`]
         )}
+        ref={btnRef}
+        onClick={handleClick}
       >
         {children}
       </button>
