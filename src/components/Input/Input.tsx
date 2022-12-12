@@ -5,7 +5,7 @@ import classes from "./assets/styles.module.scss";
 
 interface InputProps extends HTMLAttributes<HTMLInputElement> {
   colorSchema?: colorSchema;
-  value: string;
+  value?: string;
 }
 
 export const Input: FC<InputProps> = memo(
