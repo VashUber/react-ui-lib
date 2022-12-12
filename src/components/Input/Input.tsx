@@ -1,6 +1,7 @@
 import { FC, HTMLAttributes, memo } from "react";
-import { InputStyle, InputWrapperStyle, InputLabel } from "./assets/style";
+import cn from "classnames";
 import { colorSchema } from "../SharedTypes";
+import classes from "./assets/styles.module.scss";
 
 interface InputProps extends HTMLAttributes<HTMLInputElement> {
   colorSchema?: colorSchema;
@@ -8,17 +9,19 @@ interface InputProps extends HTMLAttributes<HTMLInputElement> {
 }
 
 export const Input: FC<InputProps> = memo(
-  ({ colorSchema, value, placeholder, ...props }) => {
+  ({ colorSchema = "default", placeholder, ...props }) => {
     return (
-      <InputWrapperStyle>
-        <InputStyle
-          colorSchema={colorSchema}
-          value={value}
-          isEmpty={!value.length}
+      <div className={classes["input"]}>
+        <input
+          placeholder={placeholder}
+          className={cn(
+            classes["input__element"],
+            classes[`input__element--${colorSchema}`]
+          )}
           {...props}
         />
-        <InputLabel>{placeholder}</InputLabel>
-      </InputWrapperStyle>
+        <div className={classes["input__label"]}>{placeholder}</div>
+      </div>
     );
   }
 );
