@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { Input } from "./Input";
 
 describe("Input", () => {
-  it("Should change value on change event", () => {
+  it("Should change value at change event", () => {
     const cb = jest.fn();
     const value = "test value";
 

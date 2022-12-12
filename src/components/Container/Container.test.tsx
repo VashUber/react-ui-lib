@@ -3,12 +3,12 @@ import { Container } from "./Container";
 
 describe("Container", () => {
   it("Should render children prop", async () => {
-    const container = render(
+    const wrapper = render(
       <Container>
         <div data-testid="children">children</div>
       </Container>
     );
 
-    expect(container.getByTestId("children")).toBeInTheDocument();
+    expect(wrapper.getByTestId("children")).toBeInTheDocument();
   });
 });

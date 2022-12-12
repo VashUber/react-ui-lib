@@ -1,16 +1,16 @@
-import { FC, memo } from "react";
+import { FC, HTMLAttributes, memo } from "react";
 import { size } from "../SharedTypes";
 import classes from "./assets/styles.module.scss";
 import cn from "classnames";
 import { LoaderColorSchema } from "./assets/types";
 
-type LoaderProps = {
+interface LoaderProps extends HTMLAttributes<HTMLDivElement> {
   size?: size;
   colorSchema?: LoaderColorSchema;
-};
+}
 
 export const Loader: FC<LoaderProps> = memo(
-  ({ size = "sm", colorSchema = "default" }) => {
+  ({ size = "sm", colorSchema = "default", ...props }) => {
     return (
       <div
         className={cn(
@@ -18,6 +18,7 @@ export const Loader: FC<LoaderProps> = memo(
           classes[`wrapper--${size}`],
           classes[`wrapper--${colorSchema}`]
         )}
+        {...props}
       >
         <div />
         <div />

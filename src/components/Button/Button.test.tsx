@@ -5,7 +5,7 @@ describe("Button", () => {
   it("Should render children prop", () => {
     const msg = "Click on me";
 
-    const button = render(<Button>{msg}</Button>);
-    expect(button.getByText(msg)).toBeInTheDocument();
+    const wrapper = render(<Button>{msg}</Button>);
+    expect(wrapper.getByText(msg)).toBeInTheDocument();
   });
 });
