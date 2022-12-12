@@ -1,15 +1,8 @@
-import styled from "styled-components";
-import { breakPoints } from "../Global";
+import { FC, HTMLAttributes, memo } from "react";
+import classes from "./assets/styles.module.scss";
 
-export const Container = styled.div`
-  width: 100%;
-  padding: 0 30px;
+interface Container extends HTMLAttributes<HTMLDivElement> {}
 
-  @media (max-width: ${breakPoints.md}) {
-    padding: 0 20px;
-  }
-
-  @media (max-width: ${breakPoints.xs}) {
-    padding: 0 10px;
-  }
-`;
+export const Container: FC<Container> = memo(({ children }) => {
+  return <div className={classes["container"]}>{children}</div>;
+});
