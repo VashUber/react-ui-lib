@@ -1,0 +1,80 @@
+.button {
+  $root: &;
+
+  border: none;
+  font-size: 14px;
+  border-radius: 10px;
+  width: max-content;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  box-sizing: border-box;
+  transition: var(--transition) background ease-in-out,
+    var(--transition) color ease-in-out;
+
+  &--sm {
+    height: 25px;
+    width: 60px;
+  }
+
+  &--md {
+    height: 30px;
+    width: 70px;
+  }
+
+  &--lg {
+    height: 35px;
+    width: 80px;
+  }
+
+  &--default {
+    &#{$root}--default {
+      color: var(--dark);
+    }
+
+    &#{$root}--primary {
+      color: var(--bg-primary);
+    }
+
+    &#{$root}--secondary {
+      color: var(--bg-secondary);
+    }
+  }
+
+  &--contained {
+    &#{$root}--default {
+      background: var(--dark);
+      color: var(--light);
+    }
+
+    &#{$root}--primary {
+      background: var(--bg-primary);
+      color: var(--light);
+    }
+
+    &#{$root}--secondary {
+      background: var(--bg-secondary);
+      color: var(--light);
+    }
+  }
+
+  &--outline {
+    &#{$root}--default {
+      border: 1px solid var(--dark);
+      color: var(--dark);
+    }
+
+    &#{$root}--primary {
+      border: 1px solid var(--bg-primary);
+      color: var(--dark);
+    }
+
+    &#{$root}--secondary {
+      border: 1px solid var(--bg-secondary);
+      color: var(--dark);
+    }
+  }
+}

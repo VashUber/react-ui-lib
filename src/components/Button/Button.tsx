@@ -1,34 +1,35 @@
 import { FC, HTMLAttributes, memo } from "react";
-import { Loader } from "../Loader/Loader";
+import cn from "classnames";
 import { colorSchema, size } from "../SharedTypes";
-import { ButtonStyle } from "./assets";
+import classes from "./assets/styles.module.scss";
 import { variant } from "./assets/types";
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   variant?: variant;
   colorSchema?: colorSchema;
   size?: size;
-  loading?: boolean;
 }
 
 export const Button: FC<ButtonProps> = memo(
-  ({ children, loading, ...props }) => {
+  ({
+    children,
+    size = "sm",
+    colorSchema = "default",
+    variant = "default",
+    ...props
+  }) => {
     return (
-      <ButtonStyle {...props}>
-        {!loading ? (
-          children
-        ) : (
-          <Loader
-            colorSchema={
-              props.variant === "contained" &&
-              (props.colorSchema === "primary" ||
-                props.colorSchema === "secondary")
-                ? "light"
-                : "default"
-            }
-          />
+      <button
+        {...props}
+        className={cn(
+          classes["button"],
+          classes[`button--${size}`],
+          classes[`button--${variant}`],
+          classes[`button--${colorSchema}`]
         )}
-      </ButtonStyle>
+      >
+        {children}
+      </button>
     );
   }
 );

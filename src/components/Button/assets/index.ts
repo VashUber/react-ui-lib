@@ -1,1 +1,0 @@
-export { ButtonStyle } from "./style";
