@@ -22,13 +22,12 @@ export const Button: FC<ButtonProps> = memo(
     const btnRef = useRef<HTMLButtonElement>(null!);
 
     const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
-      const x = e.nativeEvent.offsetX;
-      const y = e.nativeEvent.offsetY;
-      if (x === 0 && y === 0) return;
-
       if (onClick) {
         onClick(e);
       }
+
+      const x = e.nativeEvent.offsetX;
+      const y = e.nativeEvent.offsetY;
 
       const ripple = document.createElement("span");
       ripple.classList.add(classes["ripple"]);

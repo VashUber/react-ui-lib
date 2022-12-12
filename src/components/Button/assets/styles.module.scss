@@ -2,6 +2,7 @@
   $root: &;
 
   position: relative;
+  overflow: hidden;
   border: none;
   font-size: 14px;
   border-radius: 10px;
@@ -26,6 +27,7 @@
     border-radius: 50%;
     transition: all 5s ease-in;
     animation: ripple ease-in 0.6s;
+    pointer-events: none;
   }
 
   &--sm {
