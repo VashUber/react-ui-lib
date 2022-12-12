@@ -1,4 +1,4 @@
-import type { FC, HTMLAttributes } from "react";
+import { FC, HTMLAttributes, memo } from "react";
 import { Loader } from "../Loader/Loader";
 import { colorSchema, size } from "../SharedTypes";
 import { ButtonStyle } from "./assets";
@@ -11,22 +11,24 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   loading?: boolean;
 }
 
-export const Button: FC<ButtonProps> = ({ children, loading, ...props }) => {
-  return (
-    <ButtonStyle {...props}>
-      {!loading ? (
-        children
-      ) : (
-        <Loader
-          colorSchema={
-            props.variant === "contained" &&
-            (props.colorSchema === "primary" ||
-              props.colorSchema === "secondary")
-              ? "light"
-              : "default"
-          }
-        />
-      )}
-    </ButtonStyle>
-  );
-};
+export const Button: FC<ButtonProps> = memo(
+  ({ children, loading, ...props }) => {
+    return (
+      <ButtonStyle {...props}>
+        {!loading ? (
+          children
+        ) : (
+          <Loader
+            colorSchema={
+              props.variant === "contained" &&
+              (props.colorSchema === "primary" ||
+                props.colorSchema === "secondary")
+                ? "light"
+                : "default"
+            }
+          />
+        )}
+      </ButtonStyle>
+    );
+  }
+);

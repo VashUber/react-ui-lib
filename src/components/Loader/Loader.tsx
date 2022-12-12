@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import { size } from "../SharedTypes";
 import { Dot, DotWrapper } from "./assets";
 import { LoaderColorSchema } from "./assets/types";
@@ -8,7 +8,7 @@ type LoaderProps = {
   colorSchema?: LoaderColorSchema;
 };
 
-export const Loader: FC<LoaderProps> = ({ size, colorSchema }) => {
+export const Loader: FC<LoaderProps> = memo(({ size, colorSchema }) => {
   return (
     <DotWrapper size={size}>
       <Dot size={size} colorSchema={colorSchema} />
@@ -16,4 +16,4 @@ export const Loader: FC<LoaderProps> = ({ size, colorSchema }) => {
       <Dot size={size} colorSchema={colorSchema} />
     </DotWrapper>
   );
-};
+});
