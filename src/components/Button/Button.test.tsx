@@ -6,6 +6,6 @@ describe("Button", () => {
     const msg = "Click on me";
 
     const button = render(<Button>{msg}</Button>);
-    expect(button.baseElement.innerHTML).include(msg);
+    expect(button.getByText(msg)).toBeInTheDocument();
   });
 });
