@@ -1,14 +1,12 @@
-@import "../../Global/breakpoints.scss";
-
 .container {
   width: 100%;
   padding: 0 30px;
 
-  @media (max-width: $screen-md) {
+  @media (max-width: var(--screen-md)) {
     padding: 0 20px;
   }
 
-  @media (max-width: $screen-sm) {
+  @media (max-width: var(--screen-sm)) {
     padding: 0 10px;
   }
 }

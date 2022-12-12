@@ -1,4 +1,5 @@
-import { Loader, GlobalStyle } from "../components";
+import { Loader } from "../components";
+import "../components/Global/global.scss";
 
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
@@ -9,7 +10,6 @@ export default {
 
 const Template: ComponentStory<typeof Loader> = (args) => (
   <div>
-    <GlobalStyle />
     <Loader {...args} />
   </div>
 );

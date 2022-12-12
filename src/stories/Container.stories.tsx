@@ -1,4 +1,5 @@
-import { Container, GlobalStyle } from "../components";
+import { Container } from "../components";
+import "../components/Global/global.scss";
 
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
@@ -9,7 +10,6 @@ export default {
 
 const Template: ComponentStory<typeof Container> = (args) => (
   <div>
-    <GlobalStyle />
     <Container {...args}>content</Container>
   </div>
 );

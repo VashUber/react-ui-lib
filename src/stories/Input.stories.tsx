@@ -1,4 +1,5 @@
-import { Input, GlobalStyle } from "../components";
+import { Input } from "../components";
+import "../components/Global/global.scss";
 
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { useState } from "react";
@@ -13,7 +14,6 @@ const Template: ComponentStory<typeof Input> = (args) => {
 
   return (
     <div>
-      <GlobalStyle />
       <Input
         {...args}
         value={state}

@@ -1,0 +1,77 @@
+.wrapper {
+  display: flex;
+  width: max-content;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+
+  div {
+    will-change: contents;
+    animation: blink infinite ease-in-out 1.25s;
+    transform: scale(0);
+    border-radius: 50%;
+  }
+
+  &--sm {
+    div {
+      width: 6px;
+      height: 6px;
+    }
+  }
+
+  &--md {
+    div {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  &--lg {
+    div {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &--default {
+    div {
+      background: var(--dark);
+    }
+  }
+
+  &--light {
+    div {
+      background: var(--light);
+    }
+  }
+
+  &--primary {
+    div {
+      background: var(--bg-primary);
+    }
+  }
+
+  &--secondary {
+    div {
+      background: var(--bg-secondary);
+    }
+  }
+
+  div:nth-child(2) {
+    animation-delay: 200ms;
+  }
+
+  div:nth-child(3) {
+    animation-delay: 390ms;
+  }
+}
+
+@keyframes blink {
+  20% {
+    transform: scale(1);
+  }
+
+  70% {
+    transform: scale(0);
+  }
+}
