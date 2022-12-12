@@ -1,0 +1,50 @@
+@use "sass:math";
+
+.progress {
+  border-radius: 50%;
+  position: relative;
+
+  &--sm {
+    width: 75px;
+    height: 75px;
+
+    &::after {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &--md {
+    width: 110px;
+    height: 110px;
+
+    &::after {
+      width: 90px;
+      height: 90px;
+    }
+  }
+
+  &--lg {
+    width: 150px;
+    height: 150px;
+
+    &::after {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  &::after {
+    content: attr(data-progress) "%";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--light);
+    color: var(--dark);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+}
