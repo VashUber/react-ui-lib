@@ -5,7 +5,7 @@
   overflow: hidden;
   border: none;
   font-size: 14px;
-  border-radius: 10px;
+  border-radius: 5px;
   width: max-content;
   outline: none;
   cursor: pointer;
@@ -19,7 +19,6 @@
     var(--transition) color ease-in-out;
 
   .ripple {
-    background: var(--white-opacity-20);
     transform-origin: center;
     position: absolute;
     width: 1px;
@@ -48,14 +47,26 @@
   &--default {
     &#{$root}--default {
       color: var(--dark);
+
+      .ripple {
+        background: var(--bg-primary-opacity-20);
+      }
     }
 
     &#{$root}--primary {
       color: var(--bg-primary);
+
+      .ripple {
+        background: var(--bg-primary-opacity-20);
+      }
     }
 
     &#{$root}--secondary {
       color: var(--bg-secondary);
+
+      .ripple {
+        background: var(--bg-secondary-opacity-20);
+      }
     }
   }
 
@@ -63,16 +74,28 @@
     &#{$root}--default {
       background: var(--dark);
       color: var(--light);
+
+      .ripple {
+        background: var(--white-opacity-20);
+      }
     }
 
     &#{$root}--primary {
       background: var(--bg-primary);
       color: var(--light);
+
+      .ripple {
+        background: var(--white-opacity-20);
+      }
     }
 
     &#{$root}--secondary {
       background: var(--bg-secondary);
       color: var(--light);
+
+      .ripple {
+        background: var(--white-opacity-20);
+      }
     }
   }
 
@@ -80,16 +103,28 @@
     &#{$root}--default {
       border: 1px solid var(--dark);
       color: var(--dark);
+
+      .ripple {
+        background: var(--bg-primary-opacity-20);
+      }
     }
 
     &#{$root}--primary {
       border: 1px solid var(--bg-primary);
-      color: var(--dark);
+      color: var(--bg-primary);
+
+      .ripple {
+        background: var(--bg-primary-opacity-20);
+      }
     }
 
     &#{$root}--secondary {
       border: 1px solid var(--bg-secondary);
-      color: var(--dark);
+      color: var(--bg-secondary);
+
+      .ripple {
+        background: var(--bg-secondary-opacity-20);
+      }
     }
   }
 }

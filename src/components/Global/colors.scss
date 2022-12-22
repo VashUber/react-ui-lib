@@ -1,9 +1,27 @@
+@function hexToRGBA($hex, $opacity) {
+  @return rgba(red($hex), green($hex), blue($hex), $opacity);
+}
+
+$primary: #6e7ce7;
+$primary-opacity-20: hexToRGBA($primary, 0.2);
+
+$secondary: #f3c40b;
+$secondary-opacity-20: hexToRGBA($secondary, 0.2);
+
+$white: #ffffff;
+$white-opacity-20: hexToRGBA($white, 0.2);
+
+$dark: #212121;
+
 :root {
-  --bg-primary: #6e7ce7;
-  --bg-secondary: #f3c40b;
+  --bg-primary: #{$primary};
+  --bg-primary-opacity-20: #{$primary-opacity-20};
 
-  --white-opacity-20: rgba(255, 255, 255, 0.2);
+  --bg-secondary: #{$secondary};
+  --bg-secondary-opacity-20: #{$secondary-opacity-20};
 
-  --dark: #212121;
-  --light: #ffffff;
+  --white-opacity-20: #{$white-opacity-20};
+
+  --dark: #{$dark};
+  --light: #{$white};
 }
