@@ -12,4 +12,4 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
 
 EXPOSE 6006
 
-CMD [ "npm", "run", "dev" ]
+CMD [ "npm", "run", "storybook" ]
