@@ -3,6 +3,7 @@ import cn from "classnames";
 import { colorSchema, size } from "../SharedTypes";
 import classes from "./assets/styles.module.scss";
 import { variant } from "./assets/types";
+import { useRipple } from "../../hooks/ripple";
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   variant?: variant;
@@ -26,19 +27,7 @@ export const Button: FC<ButtonProps> = memo(
         onClick(e);
       }
 
-      const x = e.nativeEvent.offsetX;
-      const y = e.nativeEvent.offsetY;
-
-      const ripple = document.createElement("span");
-      ripple.classList.add(classes["ripple"]);
-      ripple.style.top = y + "px";
-      ripple.style.left = x + "px";
-
-      btnRef.current.appendChild(ripple);
-
-      setTimeout(() => {
-        ripple.remove();
-      }, 600);
+      useRipple(btnRef, e, classes);
     };
 
     return (
