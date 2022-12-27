@@ -5,7 +5,7 @@
   position: relative;
 
   &__list {
-    display: none;
+    display: flex;
     flex-direction: column;
     position: absolute;
     top: 110%;
@@ -13,6 +13,10 @@
     width: 100%;
     border-radius: 5px;
     box-shadow: var(--box-shadow);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility var(--transition) ease-in,
+      opacity var(--transition) ease-in;
   }
 
   &__label {
@@ -50,7 +54,8 @@
 
   &--focus {
     #{$root}__list {
-      display: flex;
+      visibility: visible;
+      opacity: 1;
     }
   }
 
