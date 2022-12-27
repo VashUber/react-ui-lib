@@ -1,11 +1,70 @@
 .select {
+  $root: &;
+
+  max-width: 200px;
   position: relative;
 
   &__list {
-    display: flex;
+    display: none;
     flex-direction: column;
     position: absolute;
-    top: 100%;
+    top: 110%;
     left: 0;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+  }
+
+  &__label {
+    position: relative;
+    cursor: pointer;
+    padding: 5px 15px;
+    height: 30px;
+    border-radius: 5px;
+  }
+
+  &--primary {
+    #{$root}__label {
+      border: 1px solid var(--bg-primary);
+    }
+  }
+
+  &--secondary {
+    #{$root}__label {
+      border: 1px solid var(--bg-secondary);
+    }
+  }
+
+  &--default {
+    #{$root}__label {
+      border: 1px solid var(--dark);
+    }
+  }
+
+  &--active {
+    #{$root}__placeholder {
+      top: -2px;
+      font-size: 12px;
+    }
+  }
+
+  &--focus {
+    #{$root}__list {
+      display: flex;
+    }
+  }
+
+  &__placeholder {
+    top: 50%;
+    left: 10px;
+    font-size: var(--text);
+    transform: translate(0, -50%);
+    width: max-content;
+    position: absolute;
+    transition: top var(--transition) ease-in,
+      font-size var(--transition) ease-in;
+    background: var(--light);
+    padding: 3px 0;
+    pointer-events: none;
   }
 }

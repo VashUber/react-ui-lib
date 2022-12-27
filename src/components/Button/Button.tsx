@@ -27,7 +27,7 @@ export const Button: FC<ButtonProps> = memo(
         onClick(e);
       }
 
-      useRipple(btnRef, e, classes);
+      useRipple(btnRef, e, classes["ripple"]);
     };
 
     return (

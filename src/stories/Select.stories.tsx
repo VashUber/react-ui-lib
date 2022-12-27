@@ -31,4 +31,6 @@ const Template: ComponentStory<typeof Select> = (args) => {
 
 export const Example = Template.bind({});
 
-Example.args = {};
+Example.args = {
+  placeholder: "Select",
+};
