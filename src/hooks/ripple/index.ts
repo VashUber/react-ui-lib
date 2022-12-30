@@ -4,7 +4,7 @@ import classes from "./styles.module.scss";
 export const useRipple = (
   elem: MutableRefObject<Element>,
   e: MouseEvent<Element>,
-  cn?: string
+  cn?: string | string[]
 ) => {
   const x = e.nativeEvent.offsetX;
   const y = e.nativeEvent.offsetY;
@@ -12,7 +12,13 @@ export const useRipple = (
   const ripple = document.createElement("span");
 
   if (cn) {
-    ripple.classList.add(cn);
+    if (Array.isArray(cn)) {
+      cn.forEach((cl) => {
+        ripple.classList.add(cl);
+      });
+    } else {
+      ripple.classList.add(cn);
+    }
   }
 
   ripple.classList.add(classes["ripple"]);
